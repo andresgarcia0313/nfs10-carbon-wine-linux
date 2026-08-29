@@ -41,7 +41,7 @@ if [ "$SININTRO" = 1 ] || [ "$VENTANA" = 1 ]; then
   fi
 fi
 
-[ "$FPS" = 1 ] && { export MANGOHUD=1; export MANGOHUD_CONFIG="fps,frametime,cpu_load,gpu_load"; }
+[ "$FPS" = 1 ] && { export MANGOHUD=1; export MANGOHUD_CONFIG="fps,frametime,cpu_stats,gpu_stats"; }
 [ "$TRAZAR" = 1 ] && export WINEDEBUG=+file
 
 cd "$J/juego" || fallo "No se pudo entrar a $J/juego"

@@ -44,9 +44,9 @@ bash scripts/parchear.sh       || abortar "fallaron los parches"
 bash scripts/configurar.sh     || abortar "fallo la configuracion"
 
 install -m 755 scripts/jugar.sh "$JUEGO/jugar.sh"
-# Subtitulos activados: es lo que hace que las cinematicas se lean en espanol,
-# porque el audio de los videos solo existe en ingles en las ediciones de PC.
-sed -i 's/^ShowSubs = 0/ShowSubs = 1/' "$JUEGO/juego/scripts/NFSCExtraOptionsSettings.ini" 2>/dev/null
+# OJO: NO tocar ShowSubs. Su documentacion dice "German, French, Spanish, all have
+# subtitles. Why not English?": esa opcion es SOLO para anadir subtitulos al ingles.
+# En espanol el juego ya los trae de serie.
 bash scripts/crear-lanzador.sh || aviso "no se pudo crear la entrada del menu"
 
 echo

@@ -49,9 +49,10 @@ grep -q "^WindowedMode = 4" "$INI" 2>/dev/null && ok "pantalla completa sin bord
   || nota "WindowedMode no esta en 4"
 grep -q "^CrashFix = 1" "$INI" 2>/dev/null && ok "arreglo del cierre al cargar perfil" \
   || mal "CrashFix apagado: el juego se cerrara al cargar una partida"
-grep -q "^ShowSubs = 1" "$JUEGO/juego/scripts/NFSCExtraOptionsSettings.ini" 2>/dev/null \
-  && ok "subtitulos activados (asi las cinematicas se leen en espanol)" \
-  || nota "subtitulos apagados: las cinematicas iran en ingles sin texto"
+# ShowSubs es SOLO para anadir subtitulos al ingles; en espanol ya los hay de serie.
+grep -q "^ShowSubs = 0" "$JUEGO/juego/scripts/NFSCExtraOptionsSettings.ini" 2>/dev/null \
+  && ok "ShowSubs sin tocar (en espanol los subtitulos ya son nativos)" \
+  || nota "ShowSubs esta a 1: esa opcion es solo para el ingles, aqui no aporta"
 
 [ -L "$PREFIJO/drive_c/NFSC" ] && [ -d "$PREFIJO/drive_c/NFSC" ] \
   && ok "el prefijo ve el juego como C:\\NFSC" || mal "el enlace C:\\NFSC no resuelve"

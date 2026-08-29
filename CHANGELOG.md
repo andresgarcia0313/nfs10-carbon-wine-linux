@@ -19,8 +19,10 @@
   reflejos del asfalto subidos.
 - Réplica de esos ajustes en el registro como red de seguridad.
 - Override de `dinput8` fijado también en el registro del prefijo.
-- Subtítulos activados (`ShowSubs = 1`), que es la vía por la que las cinemáticas
-  se leen en español.
+- Comprobación de que `ShowSubs` queda sin tocar: su documentación aclara que esa
+  opción sirve solo para añadir subtítulos al inglés ("German, French, Spanish, all
+  have subtitles. Why not English?"), porque en español ya son nativos. Activarla en
+  una instalación en español no aporta nada.
 - Desactivación preventiva de los mandos fantasma.
 - Lanzador con opciones y entrada en el menú de escritorio con icono propio.
 - Guion de comprobación posterior a la instalación.

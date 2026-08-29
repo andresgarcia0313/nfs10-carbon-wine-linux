@@ -57,7 +57,7 @@ Conviene ser exacto, porque no es todo o nada.
 |---|---|
 | Menús, HUD, textos del juego | **Español** |
 | Título del juego | **Carbono** (así se llamó aquí) |
-| Subtítulos de las cinemáticas | **Español**, y hay que activarlos |
+| Subtítulos de las cinemáticas | **Español**, nativos, sin configurar nada |
 | Audio de las cinemáticas | Inglés |
 
 El disco trae dieciséis ficheros de idioma, entre ellos `Spanish_Global.bin` y
@@ -65,10 +65,13 @@ El disco trae dieciséis ficheros de idioma, entre ellos `Spanish_Global.bin` y
 inglés, finés, húngaro, polaco y sueco. **No existe doblaje al español en las ediciones
 de PC de Carbon.** Lo que sí hay es un sistema de subtítulos propio: los ficheros
 `SUBTITLES/*.sub` guardan solo los tiempos, y el texto sale del fichero de idioma. Con el
-juego en español, los subtítulos salen en español.
+juego en español, los subtítulos salen en español **sin tocar nada**.
 
-El detalle es que **vienen apagados de fábrica**: `ShowSubs = 0` en Extra Options. El
-instalador lo pone a 1.
+Conviene avisar de una trampa: Extra Options trae una opción llamada `ShowSubs` que parece
+la que enciende los subtítulos, y **no lo es**. Su propia documentación lo explica: *"German,
+French, Spanish, all have subtitles. Why not English?"*. Es decir, sirve únicamente para
+añadírselos al inglés, que es el idioma que se quedó sin ellos. En una instalación en
+español no aporta nada, así que el instalador la deja como viene.
 
 ---
 
@@ -196,7 +199,7 @@ una sesión que esté confinada a los núcleos lentos se lo transmite al juego.
 
 Verifica el ejecutable y la ausencia de SafeDisc leyendo las secciones PE, que haya un solo
 cargador, los complementos, el idioma en las **cuatro** ramas del registro más los dos
-ficheros de configuración, el override de `dinput8`, y que los subtítulos estén activados.
+ficheros de configuración, el override de `dinput8`, y que `ShowSubs` no se haya tocado.
 
 ![Vídeo en 16:9](imagenes/03-video-16-9.jpg)
 
